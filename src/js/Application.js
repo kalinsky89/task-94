@@ -15,7 +15,21 @@ export default class Application extends EventEmitter {
   }
   setEmojis(emojis) {
     this.emojis = emojis;
+    document.querySelector("#emojis").innerHTML="";
+    let fmonkeys = this.addBananas();
+    //foreach the loop and it is ready
+    fmonkeys.forEach(fmonkeys =>{
+      let p = document.createElement("p")
+      p.textContent=fmonkeys;
+      document.querySelector('#emojis').append(p);
+    });
   }
 
-  addBananas() {}
+  addBananas() {
+    let monkeys = ["🐵", "🐵", "🐵"];
+    let feededMonkeys = monkeys.map((monkey)=>{
+      return monkey + "🍌";
+    });
+    return feededMonkeys;
+  }
 }
